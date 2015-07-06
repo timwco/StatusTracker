@@ -1,0 +1,13 @@
+<form class="loginForm" ng-submit="login(user)">
+  <input style="display:none;" type="text" name="somefakename" />
+  <input style="display:none;" type="password" name="anotherfakename" />
+  <md-input-container>
+      <label>Username</label>
+      <input ng-model="user.username" type="text">
+  </md-input-container>
+  <md-input-container>
+      <label>Password</label>
+      <input ng-model="user.password" type="password">
+  </md-input-container>
+  <md-button class="md-raised">Login</md-button>
+</form>

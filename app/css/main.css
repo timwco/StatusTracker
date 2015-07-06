@@ -1,0 +1,38 @@
+body {
+  background: #efefef; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 25px; }
+  .container md-toolbar {
+    background-color: #213037 !important; }
+
+.links {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  font-size: 13px; }
+
+.loginForm {
+  width: 600px;
+  margin: 25px auto; }
+
+.statusBlockWrapper {
+  margin-bottom: 15px; }
+
+.repoCount {
+  margin-top: 22px;
+  font-size: 12px; }
+
+.ghName {
+  text-decoration: none; }
+
+body .container .color-default {
+  color: #4caf50 !important; }
+
+body .container .color-accent {
+  color: #ffab40 !important; }
+
+body .container .color-warn {
+  color: #f44336 !important; }

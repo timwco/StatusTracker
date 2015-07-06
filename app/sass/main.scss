@@ -1,0 +1,46 @@
+body {
+  background: rgba(239,239,239,1);
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 25px;
+  md-toolbar {
+    background-color: rgba(33,48,55,1) !important;
+  }
+}
+
+.links {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  font-size: 13px;
+}
+
+.loginForm {
+  width: 600px;
+  margin: 25px auto;
+}
+
+.statusBlockWrapper {
+  margin-bottom: 15px;
+}
+
+.repoCount {
+  margin-top: 22px;
+  font-size: 12px;
+}
+
+.ghName {
+  text-decoration: none;
+}
+
+body .container .color-default {
+  color: rgba(76,175,80,1) !important;
+}
+body .container .color-accent {
+  color: rgba(255,171,64,1) !important;
+}
+body .container .color-warn {
+  color: rgba(244,67,54,1) !important;
+}

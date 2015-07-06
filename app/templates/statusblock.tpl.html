@@ -1,0 +1,23 @@
+<md-list-item class="md-3-line">
+  <img ng-src="{{ github.avatar_url }}" class="md-avatar" alt="{{status.username}}" />
+  <div class="md-list-item-text">
+    <h3>
+      <a class="ghName color-{{ currentStatus.label }}" href="https://github.com/tiy-atl-js-q2-2015/Assignments/issues/assigned/{{status.username}}">
+        {{ github.name }} &#8663;
+      </a>
+    </h3>
+    <h4 class="color-{{ currentStatus.label }}">Course Completion: {{ currentStatus.status }}</h4>
+  </div>
+  <div class="repoCount">
+    Assignments: {{ open }} of 22 Complete
+    <md-progress-linear class="md-{{ currentStatus.label }}" md-mode="determinate" value="{{determinateValue}}"></md-progress-linear>
+  </div>
+</md-list-item>
+<md-card>
+  <md-card-content>
+    <p><i>Total Absences:</i> {{ status.absent }}</p>
+    <hr />
+    <h2 class="md-title">Comments:</h2>
+    <p>{{ currentStatus.message }}</p>
+  </md-card-content>
+</md-card>
