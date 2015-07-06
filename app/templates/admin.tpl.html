@@ -1,3 +1,41 @@
-<p>
-  Admin View
-</p>
+<div class="filterNav">
+  <a href="#">All</a>
+  <a class="default" href="#">Satisfactory</a>
+  <a class="warn" href="#">Unsatisfactory</a>
+  <a class="accent" href="#">Pending</a>
+</div>
+<hr>
+<md-list>
+  <div ng-repeat="s in allStats" class="statusBlockWrapper">
+    <admin-block status="s"></admin-block>
+  </div>
+</md-list>
+
+
+<script type="text/javascript">
+  // super bad practice, but I'm in a hurry
+  setTimeout( function () {
+    $('.filterNav a').on('click', function (e) {
+      e.preventDefault();
+      
+      var sortBy = $(this).text();
+      var blocks = $('.statusBlockWrapper');
+
+      if (sortBy === 'All') {
+        blocks.removeClass('hide');
+      } else {
+        blocks.each( function () {
+          var st = $(this).find('h4 span').text();
+
+          if (st === sortBy) {
+            $(this).removeClass('hide');
+          } else {
+            $(this).addClass('hide');
+          }
+
+        });
+      }
+
+    });
+  }, 0);
+</script>

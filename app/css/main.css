@@ -1,4 +1,6 @@
-body {
+html, body {
+  height: 100%;
+  min-height: 100%;
   background: #efefef; }
 
 .container {
@@ -28,6 +30,9 @@ body {
 .ghName {
   text-decoration: none; }
 
+.hide {
+  display: none; }
+
 body .container .color-default {
   color: #4caf50 !important; }
 
@@ -36,3 +41,26 @@ body .container .color-accent {
 
 body .container .color-warn {
   color: #f44336 !important; }
+
+.filterNav a {
+  margin-right: 5px;
+  border-radius: 5px;
+  color: white;
+  padding: 2px 5px;
+  font-size: 13px;
+  text-decoration: none;
+  background-color: #213037; }
+  .filterNav a.default {
+    background-color: #4caf50; }
+  .filterNav a.accent {
+    background-color: #ffab40; }
+  .filterNav a.warn {
+    background-color: #f44336; }
+
+footer {
+  background-color: #213037;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 11px; }

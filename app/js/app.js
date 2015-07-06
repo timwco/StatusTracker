@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('app', ['ui.router', 'ngMaterial', 'ngCookies', 'github', 'config'])
+  angular.module('app', ['ui.router', 'ngMaterial', 'ngCookies', 'github'])
 
   .constant('PARSE', {
     URL: 'https://api.parse.com/1/',
@@ -49,7 +49,8 @@
 
         .state('admin', {
           url: '/admin',
-          templateUrl: 'templates/admin.tpl.html'
+          templateUrl: 'templates/admin.tpl.html',
+          controller: 'StatusCtrl'
         })
 
     }

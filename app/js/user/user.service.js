@@ -15,7 +15,11 @@
 
       var _updateConfig = function (user) {
         PARSE.CONFIG.headers['X-Parse-Session-Token'] = user.sessionToken;
-        $state.go('dashboard');
+        if(user.isAdmin) {
+          $state.go('admin');
+        } else {
+          $state.go('dashboard');
+        }
       };
 
       var _successLogin = function (user) {
@@ -52,7 +56,6 @@
           headers: PARSE.CONFIG.headers,
           params: user
         }).success( function (data) {
-          console.log(data);
           _successLogin(data);
         });
 
@@ -60,6 +63,8 @@
 
       this.checkStatus = function () {
         var user = $cookies.getObject('currentUser');
+        var token = $cookies.get('authToken');
+        console.log(token);
         if (user !== undefined) {
           _updateConfig(user);
         } else {

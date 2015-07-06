@@ -3,9 +3,9 @@
 
   angular.module('app')
 
-  .service('StatusService', ['$http', 'PARSE', 'TOTAL_REPOS', 'ConfigService',
+  .service('StatusService', ['$http', 'PARSE', 'TOTAL_REPOS',
 
-    function ($http, PARSE, TOTAL_REPOS, ConfigService) {
+    function ($http, PARSE, TOTAL_REPOS) {
 
       var Status = function (opts) {
         this.ACL = opts.ACL;
@@ -16,11 +16,7 @@
         this.absent = 0;
       };
 
-      this.getAppInfo = function () {
-        return ConfigService.getAppInfo();
-      };
-
-      this.checkStatus = function (status, user, repos, app) {
+      this.checkStatus = function (status, user, repos) {
 
         var info = {};
 
@@ -29,17 +25,17 @@
           var percentClosed = Math.floor((open / TOTAL_REPOS) * 100);
 
           if(percentClosed > 80) {
-            info.message = app.messageComplete;
+            info.message = 'Based on your current status, you will most likely graduate on time.';
             info.status = 'Satisfactory';
             info.label = 'default';
           } else {
-            info.message = app.messagePending;
+            info.message = 'Based on your current status, in order to graduate on time, you need to close a few more assignments. We suggest, you meet with your instructor to come up with a plan to complete your missing work.';
             info.status = 'Pending';
             info.label = 'accent';
           }
 
         } else {
-          info.message = app.messageIncomplete;
+          info.message = 'Based on your current status, we will be unable to graduate you on time. If you have any further questions, please speak with your instructor or campus director.';
           info.status = 'Unsatisfactory';
           info.label = 'warn';
         }
