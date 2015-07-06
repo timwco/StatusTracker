@@ -25,11 +25,11 @@
           var percentClosed = Math.floor((open / TOTAL_REPOS) * 100);
 
           if(percentClosed > 80) {
-            info.message = 'Based on your current status, you will most likely graduate on time.';
+            info.message = 'Based on your current status, you will be graduating on time.';
             info.status = 'Satisfactory';
             info.label = 'default';
           } else {
-            info.message = 'Based on your current status, in order to graduate on time, you need to close a few more assignments. We suggest, you meet with your instructor to come up with a plan to complete your missing work.';
+            info.message = 'Based on your current status, in order to graduate on time, you need to close a few more assignments, and prove that you understand the material. We suggest, you meet with your instructor to come up with a plan to complete your missing work.';
             info.status = 'Pending';
             info.label = 'accent';
           }
