@@ -9,14 +9,17 @@
     <h4 class="color-{{ currentStatus.label }}">Course Completion: {{ currentStatus.status }}</h4>
   </div>
   <div class="repoCount">
-    Assignments: {{ open }} of 22 Complete
+    <span ng-if="open == 22">100% Complete. You Rock!</span>
+    <span ng-if="open != 22">Assignments: {{ open }} of 22 Complete</span>
     <md-progress-linear class="md-{{ currentStatus.label }}" md-mode="determinate" value="{{determinateValue}}"></md-progress-linear>
+    <br />
+    Absences: {{ status.absent }} &bull;
+    Partials: {{ status.partial }} &bull;
+    Tardies: {{ status.tardies }}
   </div>
 </md-list-item>
 <md-card>
   <md-card-content>
-    <p><i>Total Absences:</i> {{ status.absent }}</p>
-    <hr />
     <h2 class="md-title">Comments:</h2>
     <p>{{ currentStatus.message }}</p>
   </md-card-content>

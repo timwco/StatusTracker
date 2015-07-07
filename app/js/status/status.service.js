@@ -35,7 +35,7 @@
           }
 
         } else {
-          info.message = 'Based on your current status, we will be unable to graduate you on time. If you have any further questions, please speak with your instructor or campus director.';
+          info.message = 'Based on your current status, you will be unable to graduate on time. If you have any further questions, please speak with your instructor or campus director.';
           info.status = 'Unsatisfactory';
           info.label = 'warn';
         }

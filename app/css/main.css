@@ -10,6 +10,14 @@ html, body {
   .container md-toolbar {
     background-color: #213037 !important; }
 
+.bottom {
+  background-color: #213037;
+  display: block;
+  color: white;
+  padding: 5px;
+  text-align: right;
+  font-size: 12px; }
+
 .links {
   position: absolute;
   right: 20px;
