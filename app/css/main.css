@@ -72,3 +72,19 @@ footer {
   text-align: center;
   margin-top: 50px;
   font-size: 11px; }
+
+.infoContainer {
+  padding: 0 25px 25px 25px; }
+  .infoContainer span {
+    background-color: #64c442;
+    color: #1a3311;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 11px; }
+
+.question {
+  font-weight: bold; }
+
+.answer {
+  text-style: italic; }

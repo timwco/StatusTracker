@@ -37,6 +37,11 @@
           controller: 'StatusCtrl'
         })
 
+        .state('info', {
+          url: '/info',
+          templateUrl: 'templates/info.tpl.html'
+        })
+
         .state('login', {
           url: '/login',
           templateUrl: 'templates/login.tpl.html',

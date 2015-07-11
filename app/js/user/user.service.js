@@ -15,9 +15,9 @@
 
       var _updateConfig = function (user) {
         PARSE.CONFIG.headers['X-Parse-Session-Token'] = user.sessionToken;
-        if(user.isAdmin) {
+        if(user.isAdmin && !$state.is('info')) {
           $state.go('admin');
-        } else {
+        } else if(!$state.is('info')){
           $state.go('dashboard');
         }
       };

@@ -83,3 +83,21 @@ footer {
   margin-top: 50px;
   font-size: 11px;
 }
+
+.infoContainer {
+    padding: 0 25px 25px 25px;
+    span {
+        background-color: rgba(100,196,66,1);
+        color: rgba(26,51,17,1);
+        padding: 3px 5px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 11px;
+    }
+}
+.question {
+    font-weight: bold;
+}
+.answer {
+    text-style: italic;
+}
