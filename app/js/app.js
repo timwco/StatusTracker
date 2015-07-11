@@ -14,9 +14,12 @@
     }
   })
 
-  .constant('TOTAL_REPOS', 22)
+  .constant('REPO_INFO', {
+    total: 22,
+    required: ['3', '7', '10', '12', '15', '19', '22']
+  })
 
-  .config( ['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
+.config( ['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
 
     function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 

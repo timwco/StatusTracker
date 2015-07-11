@@ -64,7 +64,6 @@
       this.checkStatus = function () {
         var user = $cookies.getObject('currentUser');
         var token = $cookies.get('authToken');
-        console.log(token);
         if (user !== undefined) {
           _updateConfig(user);
         } else {

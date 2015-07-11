@@ -3,9 +3,9 @@
 
   angular.module('app')
 
-  .service('StatusService', ['$http', 'PARSE', 'TOTAL_REPOS',
+  .service('StatusService', ['$http', 'PARSE', 'REPO_INFO',
 
-    function ($http, PARSE, TOTAL_REPOS) {
+    function ($http, PARSE, REPO_INFO) {
 
       var Status = function (opts) {
         this.ACL = opts.ACL;
@@ -22,9 +22,16 @@
 
         if (status.willGraduate) {
           var open = repos.length;
-          var percentClosed = Math.floor((open / TOTAL_REPOS) * 100);
+          var percentClosed = Math.floor((open / REPO_INFO.total) * 100);
+          var requiredAssignments = _.map(REPO_INFO.required, function (r) {
+            return 'Assignment ' + r;
+          });
+          var titles = _.pluck(repos, 'title');
+          var importantDone = _.every(requiredAssignments, function (a) {
+            return _.contains(titles, a);
+          });
 
-          if(percentClosed > 80) {
+          if(percentClosed > 80 && importantDone) {
             info.message = 'Based on your current status, you will be graduating on time.';
             info.status = 'Satisfactory';
             info.label = 'default';
