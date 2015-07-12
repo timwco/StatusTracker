@@ -5,7 +5,10 @@
   <a class="accent" href="#">Pending</a>
 </div>
 <hr>
-<md-list>
+<div layout="row" layout-sm="column" layout-align="space-around" ng-hide="complete">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-list ng-show='complete'>
   <div ng-repeat="s in allStats" class="statusBlockWrapper">
     <admin-block status="s"></admin-block>
   </div>
@@ -17,7 +20,7 @@
   setTimeout( function () {
     $('.filterNav a').on('click', function (e) {
       e.preventDefault();
-      
+
       var sortBy = $(this).text();
       var blocks = $('.statusBlockWrapper');
 

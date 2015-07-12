@@ -3,11 +3,17 @@
 
   angular.module('app')
 
-  .controller('StatusCtrl', ['$scope', 'StatusService',
+  .controller('StatusCtrl', ['$scope', 'StatusService', '$rootScope',
 
-    function ($scope, StatusService) {
+    function ($scope, StatusService, $rootScope) {
 
       $scope.allStats = [];
+
+      $scope.complete = false;
+
+      $rootScope.$on('data:loaded', function () {
+        $scope.complete = true;
+      });
 
       StatusService.getStatuses()
         .success( function (data) {
