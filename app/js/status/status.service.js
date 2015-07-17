@@ -31,14 +31,24 @@
             return _.contains(titles, a);
           });
 
-          if(percentClosed > 80 && importantDone) {
-            info.message = 'Based on your current status, you will be graduating on time.';
-            info.status = 'Satisfactory';
+          if (status.gradOverride) {
+
+            info.message = 'Based on your current status, you will be graduating on time, however you are being given an extension. Please stay in touch to finish those assignments';
+            info.status = 'Satisfactory *';
             info.label = 'default';
+
           } else {
-            info.message = 'Based on your current status, in order to graduate on time, you need to close a few more assignments, and prove that you understand the material. You should meet with your instructor to come up with a plan to complete your missing work.';
-            info.status = 'Pending';
-            info.label = 'accent';
+
+            if(percentClosed > 80 && importantDone) {
+              info.message = 'Based on your current status, you will be graduating on time.';
+              info.status = 'Satisfactory';
+              info.label = 'default';
+            } else {
+              info.message = 'Based on your current status, in order to graduate on time, you need to close a few more assignments, and prove that you understand the material. You should meet with your instructor to come up with a plan to complete your missing work.';
+              info.status = 'Pending';
+              info.label = 'accent';
+            }
+
           }
 
         } else {
