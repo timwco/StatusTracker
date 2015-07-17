@@ -33,8 +33,8 @@
 
           if (status.gradOverride) {
 
-            info.message = 'Based on your current status, you will be graduating on time, however you are being given an extension. Please stay in touch to finish those assignments';
-            info.status = 'Satisfactory *';
+            info.message = 'Based on your current status, you will be graduating on time, however you are being given an extension. Please stay in touch to finish those open assignments.';
+            info.status = 'Satisfactory';
             info.label = 'default';
 
           } else {
