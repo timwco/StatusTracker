@@ -1,8 +1,8 @@
 <div class="filterNav">
   <a href="#">All</a>
-  <a class="default" href="#">Satisfactory</a>
-  <a class="warn" href="#">Unsatisfactory</a>
-  <a class="accent" href="#">Pending</a>
+  <a class="default" href="#"><span class="text">Satisfactory</span> <span id="sCount"></span></a>
+  <a class="warn" href="#"><span class="text">Unsatisfactory</span> <span id="uCount"></span></a>
+  <a class="accent" href="#"><span class="text">Pending</span> <span id="pCount"></span></a>
 </div>
 <hr>
 <div layout="row" layout-sm="column" layout-align="space-around" ng-hide="complete">
@@ -18,11 +18,13 @@
 <script type="text/javascript">
   // super bad practice, but I'm in a hurry
   setTimeout( function () {
+
+
     $('.filterNav a').on('click', function (e) {
       e.preventDefault();
 
-      var sortBy = $(this).text();
       var blocks = $('.statusBlockWrapper');
+      var sortBy = $(this).find('span.text').text();
 
       if (sortBy === 'All') {
         blocks.removeClass('hide');
@@ -40,5 +42,6 @@
       }
 
     });
+
   }, 0);
 </script>

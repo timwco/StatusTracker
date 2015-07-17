@@ -73,6 +73,39 @@
         UserService.checkStatus();
       });
 
+      $rootScope.$on('data:loaded', function () {
+        
+        var blocks = $('.statusBlockWrapper');
+
+        var sCount = 0,
+            uCount = 0,
+            pCount = 0;
+
+        blocks.each( function () {
+
+          var st = $(this).find('h4 span').text();
+
+          switch (st) {
+            case 'Satisfactory':
+              sCount += 1;
+            break;
+
+            case 'Unsatisfactory':
+              uCount +=1;
+            break;
+
+            case 'Pending':
+              pCount += 1;
+            break;
+          }
+
+        });
+
+        $('#sCount').text(sCount);
+        $('#uCount').text(uCount);
+        $('#pCount').text(pCount);
+      });
+
     }
 
   ]);
